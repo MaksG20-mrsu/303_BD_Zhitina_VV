@@ -1,4 +1,5 @@
 chcp 65001
+.\sqlite3 movies_rating.db < db_init.sql
 echo "1. Составить список фильмов..."
 echo --------------------------------------------------
 .\sqlite3 movies_rating.db -box -echo "SELECT DISTINCT m.title, m.year FROM movies m JOIN ratings r ON m.id = r.movie_id ORDER BY m.year ASC, m.title ASC LIMIT 10;"
